@@ -1,0 +1,65 @@
+# Review 1 — Research: Local Weekly Meal-Prep Service
+**Team Members & GitHub Usernames:**
+- Thomas Vivas — @thomasvivas — 
+- Sebastian Hernandez — @DecearingApple —
+- Collin Castillo — @cic7-collab — 
+- Noah Madda — @nsmadda11-alt  --
+---
+
+## 1. Product, Service & Core Research Question
+- **Business Product/Service:** A local weekly meal-prep kitchen offering fresh, portioned meals for weekly pickup or local delivery.
+- **Target Workflow:** Weekly Menu Selection & Dietary Filtering (browsing the weekly menu $\rightarrow$ filtering by dietary/macro needs $\rightarrow$ building a 5-to-10 meal box $\rightarrow$ locking in the order before the weekly cutoff).
+- **Research Question:** How can a local weekly meal-prep service let customers filter by dietary restrictions and macro goals to build a weekly meal box quickly without menu overwhelm or allergen confusion?
+
+---
+
+## 2. Adjacent References (Dated Original Sources)
+1. **Factor — Weekly Menu & Plan Selector**
+   - **Source URL:** https://www.factor75.com/weekly-menu
+   - **Date Accessed:** November 15, 2026
+   - **Observed Details:** Requires users to choose a dietary preference (e.g., Keto, High Protein, Calorie Smart) and box size before unlocking full checkout; displays calorie and protein badges directly on menu cards.
+2. **Trifecta Nutrition — Meal Plans & A-La-Carte Ordering**
+   - **Source URL:** https://www.trifectanutrition.com/
+   - **Date Accessed:** November 15, 2026
+   - **Observed Details:** Separates pre-set macro meal plans from an a-la-carte macro builder where customers select individual proteins, carbs, and vegetables by weight.
+3. **Chipotle Digital Menu & Nutrition Calculator (Adjacent Reference)**
+   - **Source URL:** https://www.chipotle.com/nutrition-calculator
+   - **Date Accessed:** November 15, 2026
+   - **Observed Details:** Provides real-time dietary/allergen exclusion toggles and live macro totals as items are added, without forcing an upfront subscription lock-in.
+
+---
+
+## 3. Evidence vs. Assumptions
+| Statement / Finding | Type | Source / Verification |
+| :--- | :--- | :--- |
+| Factor displays calories and protein on meal cards and structures checkout around selecting a meal-plan tier and box size upfront. | **Observed Evidence** | Direct UI inspection of `factor75.com/weekly-menu` (Nov 15, 2026). |
+| Chipotle allows users to toggle allergens and view real-time macro totals dynamically while building an order. | **Observed Evidence** | Direct UI inspection of `chipotle.com/nutrition-calculator` (Nov 15, 2026). |
+| Local customers will prefer a flexible 5-meal box without a mandatory recurring subscription on their first order. | **Assumption** | Team hypothesis based on student/commuter budgets; not yet validated with real buyers. |
+| Simulated Customer Note: *"I need dairy-free and nut-free meals and will leave a site if I have to click three pages to check ingredients."* | **Simulated / Hypothesis** | Labeled persona assumption (not an actual customer interview). |
+
+---
+
+## 4. Two Competing Positions
+- **Position A — Curated Plan-First Flow:** Users select a box size (5 or 10 meals) and a single dietary lane (e.g., High-Protein) first, and the menu narrows automatically. *Pro:* Fast checkout and predictable kitchen prep. *Con:* Restrictive for mixed dietary needs or ingredient-conscious buyers.
+- **Position B — Filter-First A-La-Carte Builder:** Users land directly on the open weekly menu, apply multi-select allergen/macro filters, and fill a live box counter freely. *Pro:* High transparency and user control. *Con:* Higher risk of choice overload without clear grouping.
+
+---
+
+## 5. Two Persona Hypotheses (Assumptions)
+1. **Persona Hypothesis 1 — "Alex" (Routine Macro-Tracker, 21, Student-Athlete / Gym-Goer):** Orders 5–10 meals weekly; filters for $\ge 40\text{g}$ protein per meal; wants a quick-add counter or 1-click reorder without marketing clutter. *(Labeled Hypothesis)*
+2. **Persona Hypothesis 2 — "Priya" (Allergen-Cautious Planner, 34, Office Coordinator):** Requires strict dairy-free and tree-nut-free filtering; requires full ingredient lists and allergen tags visible in one click before ordering. *(Labeled Hypothesis)*
+
+---
+
+## 6. Traceable Finding $\rightarrow$ Proposed Feature Decision
+- **Traced Finding:** Inspecting Factor's upfront plan gate alongside Chipotle's live allergen/nutrition toggles (accessed Nov 15, 2026) shows that users with specific dietary constraints need immediate visibility into ingredients and allergen exclusions before committing to a box size.
+- **Proposed Feature Decision:** Build a **Persistent Dietary Filter Bar + Sticky Box Progress Counter** at the top of the weekly menu:
+  1. One-tap allergen exclusion toggles (Dairy-Free, Nut-Free, Gluten-Free) that immediately filter incompatible dishes.
+  2. Front-of-card macro badges (Calories / Protein / Carbs / Fat) with a 1-click expandable ingredient drawer.
+  3. A sticky "Weekly Box Counter" (e.g., *3 of 5 meals added*) that unlocks volume pricing automatically at 5 and 10 meals without locking users into a plan upfront.
+
+---
+
+## 7. AI Verification & Peer Review Log
+- **AI Assistance Verification:** AI was used to help structure the comparison template and draft persona hypotheses; all referenced competitor UI behaviors and URLs were manually opened and verified live on November 15, 2026.
+- **Peer Review Trace:** See GitHub Issue `#[Issue Number]` for reviewer source-to-decision verification, linked commits, and resolution check.
